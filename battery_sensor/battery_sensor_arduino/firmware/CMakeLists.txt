@@ -7,7 +7,7 @@ include_directories(${ROS_LIB_DIR} ../lib)
 add_definitions(-DMPU6050)
 
 generate_arduino_firmware(sensor
-  SRCS program.cpp ${ROS_LIB_DIR}/time.cpp
+  SRCS program.cpp ../lib/Sensor.cpp ${ROS_LIB_DIR}/time.cpp
   BOARD nano328
   PORT /dev/ttyUSB0
 )

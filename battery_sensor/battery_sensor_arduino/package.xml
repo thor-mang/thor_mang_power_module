@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <package>
-  <name>batterysensor_arduino</name>
+  <name>battery_sensor_arduino</name>
   <version>0.0.0</version>
-  <description>The batterysensor_arduino package</description>
+  <description>The battery_sensor_arduino package</description>
 
-  <maintainer email="anais@todo.todo">anais</maintainer>
+  <maintainer email="anaisreynaud@hotmail.fr">Anais Reynaud</maintainer>
 
-  <license>TODO</license>
+  <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>rosserial_arduino</build_depend>
   <build_depend>rosserial_client</build_depend>
   <build_depend>std_msgs</build_depend>
-  <build_depend>batterysensor_msgs</build_depend>
+  <build_depend>battery_sensor_msgs</build_depend>
 
   <run_depend>rosserial_arduino</run_depend>
   <run_depend>rosserial_client</run_depend>
   <run_depend>std_msgs</run_depend>
-  <run_depend>batterysensor_msgs</run_depend>
+  <run_depend>battery_sensor_msgs</run_depend>
 
 
   <export>
