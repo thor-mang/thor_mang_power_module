@@ -8,6 +8,8 @@ The following ROS packages are part of this repo:
 
 - battery_sensor_msgs contains the custom message for sending the values of the measures.
 
+- battery_sensor_pc contains a subscriber to store the measured voltage and current on the pc.
+
 
 To flash the program on the Arduino:
 -> cd ~/thor/build/battery_sensor_arduino
@@ -23,3 +25,8 @@ To launch the communication with the Arduino:
 
 To print the serial messages comming from the Arduino:
 -> screen /dev/ttyUSB0 9600
+
+
+To launch the subscriber (i.e. the storage of the measures on the pc):
+-> rosrun battery_sensor_pc listener
+(-> rosrun rqt_graph rqt_graph)

@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 
 add_message_files(
-  DIRECTORY msg
+ # DIRECTORY msg
   FILES
   Measures.msg
 )

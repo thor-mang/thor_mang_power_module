@@ -9,7 +9,7 @@
 #include <Arduino.h>
 
 
-Sensor S1 = Sensor(0,1);
+Sensor S1 = Sensor(0,1); //TODO sensor 2 & 3
 
 ros::NodeHandle nh;
 
@@ -34,7 +34,7 @@ void setup()
 }
 
 
-long msg_delay = 100;
+long msg_delay = 2000;
 long new_millis;
 long last_millis = millis();
 
@@ -50,6 +50,8 @@ void loop()
     measures_msg_1.voltage = S1.getVoltage();
     measures_msg_1.current = S1.getCurrent();
     measures_msg_1.SOC = S1.getSOC();
+
+    //measures_msg_1.header.stamp = ros::Time::now();
 
     pub.publish(&measures_msg_1);
     nh.spinOnce();
