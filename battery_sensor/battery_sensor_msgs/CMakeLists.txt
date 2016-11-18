@@ -14,6 +14,7 @@ add_message_files(
  # DIRECTORY msg
   FILES
   Measures.msg
+  ListMeasures.msg
 )
 
 

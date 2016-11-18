@@ -12,21 +12,21 @@ The following ROS packages are part of this repo:
 
 
 To flash the program on the Arduino:
--> cd ~/thor/build/battery_sensor_arduino
--> make battery_sensor_arduino_firmware_sensor-upload
+- cd ~/thor/build/battery_sensor_arduino
+- make battery_sensor_arduino_firmware_sensor-upload
 
 
 To launch the communication with the Arduino:
--> roscore
--> rosrun rosserial_python serial_node.py /dev/ttyUSB0
-(-> rostopic echo measures)
--> rqt_plot measures/voltage
+- roscore
+- rosrun rosserial_python serial_node.py /dev/ttyUSB0
+- (rostopic echo measures)
+- rqt_plot measures/voltage
 
 
 To print the serial messages comming from the Arduino:
--> screen /dev/ttyUSB0 9600
+- screen /dev/ttyUSB0 9600
 
 
 To launch the subscriber (i.e. the storage of the measures on the pc):
--> rosrun battery_sensor_pc listener
-(-> rosrun rqt_graph rqt_graph)
+- rosrun battery_sensor_pc listener
+- (rosrun rqt_graph rqt_graph)
