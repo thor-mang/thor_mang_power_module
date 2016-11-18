@@ -5,6 +5,7 @@
 
 #include "ros/ros.h"
 #include "battery_sensor_msgs/Measures.h"
+#include "battery_sensor_msgs/ListMeasures.h"
 
 #include <iostream>
 #include <vector>
@@ -16,15 +17,16 @@ std::vector<float> voltage_vector;
 std::vector<float> current_vector;
 
 
-void storeMeasures(const battery_sensor_msgs::Measures::ConstPtr& msg)
+void storeMeasures(const battery_sensor_msgs::ListMeasures::ConstPtr& msg)
 {
-  ROS_INFO("Voltage: %f", msg->voltage);
-  ROS_INFO("Current: %f", msg->current);
+  battery_sensor_msgs::Measures measures_msg_1 = msg->listMeasuresMsgs[0];
+  ROS_INFO("Voltage: %f", measures_msg_1.voltage);
+  ROS_INFO("Current: %f", measures_msg_1.current);
   //ROS_INFO_STREAM("Time: " << ros::Time::now());
   //ROS_INFO("Reading data...");
   time_vector.push_back(ros::Time::now());
-  voltage_vector.push_back(msg->voltage);
-  current_vector.push_back(msg->current);
+  voltage_vector.push_back(measures_msg_1.voltage);
+  current_vector.push_back(measures_msg_1.current);
 }
 
 int main(int argc, char **argv)
@@ -33,7 +35,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "listener");
   ros::NodeHandle nh;
 
-  ros::Subscriber sub = nh.subscribe("measures", 1000, storeMeasures);
+  ros::Subscriber sub = nh.subscribe("listMeasures", 1000, storeMeasures);
 
   /*
   ros::Rate rate(10);
