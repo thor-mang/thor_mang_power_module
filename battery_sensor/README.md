@@ -1,4 +1,6 @@
-battery_sensor
+# battery_sensor
+
+## ROS Packages
 
 ROS packages related to read the sensor values (voltage and current) using the arduino and send them in a ROS message
 
@@ -30,3 +32,7 @@ To print the serial messages comming from the Arduino:
 To launch the subscriber (i.e. the storage of the measures on the pc):
 - rosrun battery_sensor_pc listener
 - (rosrun rqt_graph rqt_graph)
+
+## Arduino Code
+
+'Power_Measure_Arduino.ino' contains a simple script for reading out the sensor values for quick debugging.
